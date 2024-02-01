@@ -7,7 +7,7 @@ varTesteA := 0
     dataAgora := FormatTime(, "dd/MM/yyyy - HH:mm")
     clipAntigo := A_Clipboard
     global varTesteA := varTesteA + 1
-    A_Clipboard := "Teste " . dataAgora . " | Ang" . varTesteA
+    A_Clipboard := "Teste " . dataAgora . " - Ang" . varTesteA
     Send("{CtrlDown}v{CtrlUp}")
     A_Clipboard := clipAntigo
 }
