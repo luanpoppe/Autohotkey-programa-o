@@ -73,8 +73,7 @@
 ;
 
 ; -------------- Variáveis globais -----------------
-qual_pc := SysGet(16) ; PC escritório é 1920 | Notebook é 1366 
-SetKeyDelay(pc_ou_notebook(30,90))
+SetKeyDelay(70)
 
 ; FUNÇÕES
     ; 
@@ -96,25 +95,7 @@ SetKeyDelay(pc_ou_notebook(30,90))
         A_Clipboard := clipboardInicial ; 
         }
     ;
-    pc_ou_notebook(pc, notebook){
-        
-        If(qual_pc = 1366)
-            {
-            return notebook
-            }
-        If(qual_pc = 1920)
-            {
-            return pc
-            }
-        }
     
-    clicar_mouse(botão:="l", tempo_sleep:=150, qtd_cliques:=1, down_up:="d", xpc:=0, ypc:=0, xnote:=0, ynote:=0){
-        global ; 
-        coord_pc := [xpc, ypc]
-        coord_note := [xnote, ynote]
-        MouseClick(botão, pc_ou_notebook(coord_pc[1], coord_note[1]), pc_ou_notebook(coord_pc[2], coord_note[2]), qtd_cliques, , down_up)
-        Sleep(tempo_sleep)
-        }
     ;
     f_sleep(comando_send, qtd_sleep){
         Send(comando_send)
@@ -139,14 +120,6 @@ SetKeyDelay(pc_ou_notebook(30,90))
         Send(":`:")
     }
     ; 
-
-    executar_programas(caminho_pc, caminho_note){ 
-        global
-        SetKeyDelay(50) ; 
-        Send(windows_r)
-        Sleep(500) ; 
-        abrir_site(pc_ou_notebook(caminho_pc, caminho_note))
-        }
 ;
 ; 
 ;
