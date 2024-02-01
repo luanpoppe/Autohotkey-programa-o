@@ -22,6 +22,16 @@
     A_Clipboard := actualPrint
 }
 
+; Escrever "console.log" fácil no PC --> aCLog 
+::aCLog::{
+    actualPrint := A_Clipboard
+    pasteContent := "console.log()"
+    A_Clipboard := pasteContent
+    Send("{CtrlDown}v{CtrlUp}")
+    Send(left_arrow)
+    A_Clipboard := actualPrint
+}
+
 ::aCLogV:: {
     actualPrint := A_Clipboard
     pasteContent := "console.log('" . actualPrint . "', " . actualPrint . ")"
@@ -216,4 +226,14 @@
 
 ;
 
+::aJSArrow:: ; aArrowJS | aJSAF | aAFJS
+    ::aArrowJS::
+    ::aJSAF::
+    ::aAFJS:: {
+        actualPrint := A_Clipboard
+        pasteContent := "() => {}"
+        A_Clipboard := pasteContent
+        Send("{CtrlDown}v{CtrlUp}")
+        A_Clipboard := actualPrint
+}
 
