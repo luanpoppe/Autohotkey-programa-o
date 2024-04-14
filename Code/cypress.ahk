@@ -44,11 +44,10 @@
     A_Clipboard := actualPrint
 }
 
-
 ::aCyShould::
 ::aCySh:: {
     actualPrint := A_Clipboard
-    A_Clipboard := "should('', '')"
+    A_Clipboard := "should('', )"
     Send(ctrl("v"))
     Send("{Left}{Left}")
 
@@ -56,7 +55,23 @@
 }
 
 ::aCyShEq:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "should('to.equal', )"
+    Send(ctrl("v"))
+    Send("{Left}{Left}")
 
+    A_Clipboard := actualPrint
+}
+
+::aCyShDeepEqual::
+::aCyShDEqual::
+::aCyShDEq:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "should('to.deep.equal', )"
+    Send(ctrl("v"))
+    Send("{Left}{Left}")
+
+    A_Clipboard := actualPrint
 }
 
 ::aCyIt:: {
