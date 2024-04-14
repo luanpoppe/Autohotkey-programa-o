@@ -16,13 +16,15 @@ rp_note_key_delay := "90" ;
 ; -------------- Variáveis globais -----------------
 if (A_ComputerName = "WINDOWS-11-LUAN") {
     qual_pc := 2
-    SetKeyDelay(120)
+   
     ; } else if (A_ComputerName = "DESKTOP-CP6ETDU") {
     ;     qual_pc := 1
 } else {
     qual_pc := SysGet(16) ; PC escritório é 1920 | Notebook é 1366
     SetKeyDelay(pc_ou_notebook(30, 90))
 }
+
+ SetKeyDelay(100)
 
 ; FUNÇÕES
 ;

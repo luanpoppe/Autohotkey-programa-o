@@ -19,8 +19,8 @@ printArray(array) {
 arrayTemp := []
 getAtalhosNotion() {
     global
-    valoresColunaA := getManyExcelValues("C:\Programação\Autohotkey\AHK 2\_Arquivos\notion-links.xlsx", 1, "A")
-    valoresColunaB := getManyExcelValues("C:\Programação\Autohotkey\AHK 2\_Arquivos\notion-links.xlsx", 1, "B")
+    valoresColunaA := getManyExcelValues("d:\Users\Mariana Choratto\Documents\Mariana\Atalhos\_Arquivos\notion-links.xlsx", 1, "A")
+    valoresColunaB := getManyExcelValues("d:\Users\Mariana Choratto\Documents\Mariana\Atalhos\_Arquivos\notion-links.xlsx", 1, "B")
     valoresColunas := []
 
     for linha in valoresColunaA {

@@ -1,0 +1,11 @@
+ajsthen=
+then((resposta) => {
+})
+
+aclog= console.log()
+
+algoCopiado + aclogv = console.log('resposta', resposta)
+
+algoCopiado + aprintv = print('resposta', resposta)
+
+console.log()
