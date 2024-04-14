@@ -18,8 +18,7 @@
 ::aCyExpEqual::
 ::aCyEEqual::
 ::aCyEEq::
-::aCyEq::
-{
+::aCyEq:: {
     actualPrint := A_Clipboard
     A_Clipboard := "expect(valor).to.equal()"
     Send(ctrl("v"))
@@ -35,8 +34,7 @@
 ::aCyETDEqual::
 ::aCyEDEqual::
 ::aCyEDEq::
-::aCyDEq::
-{
+::aCyDEq:: {
     actualPrint := A_Clipboard
     A_Clipboard := "expect(valor).to.deep.equal()"
     Send(ctrl("v"))
@@ -50,7 +48,6 @@
     A_Clipboard := "should('', )"
     Send(ctrl("v"))
     Send("{Left}{Left}")
-
     A_Clipboard := actualPrint
 }
 
@@ -59,7 +56,6 @@
     A_Clipboard := "should('to.equal', )"
     Send(ctrl("v"))
     Send("{Left}{Left}")
-
     A_Clipboard := actualPrint
 }
 
@@ -70,7 +66,6 @@
     A_Clipboard := "should('to.deep.equal', )"
     Send(ctrl("v"))
     Send("{Left}{Left}")
-
     A_Clipboard := actualPrint
 }
 
@@ -79,6 +74,30 @@
     A_Clipboard := "it('descricao_do_teste', () => {})"
     Send(ctrl("v"))
     Send("{Left}{Left}{Enter}")
+    A_Clipboard := actualPrint
+}
+
+::aCyRequest::
+::aCyReq:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "cy.request({})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "method: '',"
+    Send(ctrl("v"))
+    Send("{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "url: '',"
+    Send(ctrl("v"))
+    Send("{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "headers: {},"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "Authorization: token"
+    Send(ctrl("v"))
 
     A_Clipboard := actualPrint
 }
