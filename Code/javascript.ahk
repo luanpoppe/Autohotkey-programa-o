@@ -1,19 +1,7 @@
-﻿#Requires AutoHotkey >=v2.0
-#Include "./configuracoes.ahk"
+#Include "../configuracoes.ahk"
+; #Requires AutoHotkey >=v2.0
+; #SingleInstance
 
-;; Comandos Git:
-::aGitPODev::
-    ::aGitPOD:: {
-    colar_texto("git pull origin developer")
-}
-
-::aGitPODRebase::
-    ::aGitPODR::
-    ::aGitPROD:: {
-    colar_texto("git pull --rebase origin developer")
-}
-
-;; Comandos Javascript
 ::aCTrace:: {
     actualPrint := A_Clipboard
     pasteContent := "console.trace()"
@@ -22,14 +10,10 @@
     A_Clipboard := actualPrint
 }
 
-; Escrever "console.log" fácil no PC --> aCLog 
-::aCLog::{
-    actualPrint := A_Clipboard
-    pasteContent := "console.log()"
-    A_Clipboard := pasteContent
-    Send("{CtrlDown}v{CtrlUp}")
+; Escrever "console.log" fácil no PC --> aCLog
+::aCLog:: {
+    colar_texto("console.log()")
     Send(left_arrow)
-    A_Clipboard := actualPrint
 }
 
 ::aCLogV:: {
@@ -41,7 +25,7 @@
 }
 
 ::aCTableV::
-    ::aCTabV:: {
+::aCTabV:: {
     actualPrint := A_Clipboard
     pasteContent := "console.table('" . actualPrint . "', " . actualPrint . ")"
     A_Clipboard := pasteContent
@@ -50,7 +34,7 @@
 }
 
 ::aCTable::
-    ::aCTab:: {
+::aCTab:: {
     actualPrint := A_Clipboard
     pasteContent := "console.table()"
     A_Clipboard := pasteContent
@@ -59,8 +43,8 @@
 }
 
 ::aCGroup::
-    ::aCGrupo::
-    ::aCGr:: {
+::aCGrupo::
+::aCGr:: {
     actualPrint := A_Clipboard
     pasteContent := "console.group('Grupo de Console')`n`nconsole.groupEnd()"
     A_Clipboard := pasteContent
@@ -69,8 +53,8 @@
 }
 
 ::aCGroupV::
-    ::aCGrupoV::
-    ::aCGrV:: {
+::aCGrupoV::
+::aCGrV:: {
     actualPrint := A_Clipboard
     pasteContent := "console.group('Grupo de Console')`nconsole.log('" . actualPrint . "', " . actualPrint . ")`nconsole.groupEnd()"
     A_Clipboard := pasteContent
@@ -79,7 +63,7 @@
 }
 
 ::aCCl::
-    ::aCClear:: {
+::aCClear:: {
     actualPrint := A_Clipboard
     pasteContent := "console.clear()"
     A_Clipboard := pasteContent
@@ -92,7 +76,7 @@
     actualPrint := A_Clipboard
     actualPrintFormatted := StrReplace(actualPrint, ".", "_")
     actualPrintFormatted := StrReplace(actualPrintFormatted, "()", "")
-    texto := "console.log({ `n" 
+    texto := "console.log({ `n"
     colar_texto(texto)
     Send("{Tab}")
     texto := actualPrintFormatted . ": " . actualPrint . "," . "`n})"
@@ -183,6 +167,16 @@
     A_Clipboard := actualPrint
 }
 
+::aJsThen:: {
+    actualPrint := A_Clipboard
+    input := InputBox("Digite o nome do parâmetro", "Next: ", unset, "resposta")
+    A_Clipboard := "then((resposta) => {})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+
+    A_Clipboard := actualPrint
+}
+
 ::aJServer:: {
     actualPrint := A_Clipboard
     pasteContent := "json-server --watch db.json"
@@ -191,10 +185,10 @@
 }
 
 ::aJsSetInterval::
-    ::aJsSetInt::
-    ::aJsSInterval::
-    ::aJsSInt:: {
-        actualPrint := A_Clipboard
+::aJsSetInt::
+::aJsSInterval::
+::aJsSInt:: {
+    actualPrint := A_Clipboard
     pasteContent := "
     (
         setInterval(() => {
@@ -205,13 +199,13 @@
     Send("{CtrlDown}v{CtrlUp}")
     Send("{Up}")
     Send("{Tab}")
-    }
+}
 
 ::aJsSetTimeout::
-    ::aJsSTimeout::
-    ::aJsSetTOut::
-    ::aJsSTout:: {
-        actualPrint := A_Clipboard
+::aJsSTimeout::
+::aJsSetTOut::
+::aJsSTout:: {
+    actualPrint := A_Clipboard
     pasteContent := "
     (
         setTimeout(() => {
@@ -222,18 +216,34 @@
     Send("{CtrlDown}v{CtrlUp}")
     Send("{Up}")
     Send("{Tab}")
-    }
+}
 
 ;
 
-::aJSArrow:: ; aArrowJS | aJSAF | aAFJS
-    ::aArrowJS::
-    ::aJSAF::
-    ::aAFJS:: {
-        actualPrint := A_Clipboard
-        pasteContent := "() => {}"
-        A_Clipboard := pasteContent
-        Send("{CtrlDown}v{CtrlUp}")
-        A_Clipboard := actualPrint
+::aJsGEBId:: ; get element by id
+::aJsGEId::
+::aJsGetId::
+::aJsGetById:: {
+    texto := "document.getElementById(`"`")"
+    colar_texto(texto)
+    Send("{Left}{Left}")
 }
 
+::aJsQSelector::
+::aJsQSelect::
+::aJsQuery::
+::aJsQry:: {
+    texto := "document.querySelector(`"`")"
+    colar_texto(texto)
+    Send("{Left}{Left}")
+}
+
+::aJsQSelectorAll::
+::aJsQSelectAll::
+::aJsQueryAll::
+::aJsQryAll::
+::aJsQSAll:: {
+    texto := "document.querySelectorAll(`"`")"
+    colar_texto(texto)
+    Send("{Left}{Left}")
+}

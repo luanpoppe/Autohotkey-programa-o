@@ -1,4 +1,6 @@
 ﻿#Requires AutoHotkey >=v2.0
-#Include "./configuracoes/configuracoes.ahk"
-#Include "./configuracoes/atalhos_programacao.ahk"
-#Include "./configuracoes/angelica.ahk"
+#Include "./configuracoes.ahk"
+
+#Include "./Code/_modulo.ahk"
+#Include "./Atalhos_Notion/_modulo.ahk"
+#Include "./Funcoes_Uteis/modulo.ahk"

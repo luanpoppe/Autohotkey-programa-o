@@ -1,0 +1,6 @@
+#Include "./autohotkey.ahk"
+#Include "./javascript.ahk"
+#Include "./django.ahk"
+#Include "./git.ahk"
+#Include "./python.ahk"
+#Include "./cypress.ahk"
