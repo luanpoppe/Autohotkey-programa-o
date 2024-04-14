@@ -43,3 +43,27 @@
     Send("{Left}")
     A_Clipboard := actualPrint
 }
+
+
+::aCyShould::
+::aCySh:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "should('', '')"
+    Send(ctrl("v"))
+    Send("{Left}{Left}")
+
+    A_Clipboard := actualPrint
+}
+
+::aCyShEq:: {
+
+}
+
+::aCyIt:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "it('descricao_do_teste', () => {})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+
+    A_Clipboard := actualPrint
+}
