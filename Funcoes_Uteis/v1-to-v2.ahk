@@ -220,34 +220,6 @@ Ctrl & MButton:: {
 
 ;
 #HotIf
-; Criar arrow function JavaScript:
-::aJSArrow:: ; aArrowJS | aJSAF | aAFJS
-::aArrowJS::
-::aJSAF::
-::aAFJS:: {
-    SetKeyDelay(50)
-    varTemp2 := "() => {}"
-    varTemp3 := A_Clipboard
-    A_Clipboard := varTemp2
-    Send(ctrl("v"))
-    A_Clipboard := varTemp3
-}
-
-; Escrever o seletor do jQuery --> a$$ ou ajqry --> $("")
-::a$$::
-::ajqry::
-::ajqy::
-::ajqr:: {
-    Send("$(`"`")")
-    Send(left_arrow "" left_arrow)
-}
-; Escrever o ${} para strings no JavaScript - aJStr (Javascript string)
-::aJStr::
-::aJString::
-::aJsString:: {
-    Send("{Raw}" "${}") ; ${}
-    Send(left_arrow)
-}
 ;
 ;
 ; Pausar e Despausar Música
