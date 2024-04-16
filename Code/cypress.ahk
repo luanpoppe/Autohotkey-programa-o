@@ -6,7 +6,7 @@
 ::aCyExp::
 {
     actualPrint := A_Clipboard
-    A_Clipboard := "expect(valor).to.be()"
+    A_Clipboard := "expect(resposta).to.be()"
     Send(ctrl("v"))
     Send("{Left}")
     A_Clipboard := actualPrint
@@ -20,7 +20,7 @@
 ::aCyEEq::
 ::aCyEq:: {
     actualPrint := A_Clipboard
-    A_Clipboard := "expect(valor).to.equal()"
+    A_Clipboard := "expect(resposta).to.equal()"
     Send(ctrl("v"))
     Send("{Left}")
     A_Clipboard := actualPrint
@@ -36,7 +36,7 @@
 ::aCyEDEq::
 ::aCyDEq:: {
     actualPrint := A_Clipboard
-    A_Clipboard := "expect(valor).to.deep.equal()"
+    A_Clipboard := "expect(resposta).to.deep.equal()"
     Send(ctrl("v"))
     Send("{Left}")
     A_Clipboard := actualPrint
@@ -79,7 +79,7 @@
 
 ::aCyRequest::
 ::aCyReq:: {
-    actualPrint := A_Clipboard
+    previousPrint := A_Clipboard
     A_Clipboard := "cy.request({})"
     Send(ctrl("v"))
     Send("{Left}{Left}{Enter}")
@@ -92,12 +92,12 @@
     Send(ctrl("v"))
     Send("{Enter}")
     actualPrint := A_Clipboard
-    A_Clipboard := "headers: {},"
+    A_Clipboard := "auth: {},"
     Send(ctrl("v"))
     Send("{Left}{Left}{Enter}")
     actualPrint := A_Clipboard
-    A_Clipboard := "Authorization: token"
+    A_Clipboard := "bearer: token"
     Send(ctrl("v"))
 
-    A_Clipboard := actualPrint
+    A_Clipboard := previousPrint
 }
