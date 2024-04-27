@@ -6,6 +6,31 @@ aclog= console.log()
 
 algoCopiado + aclogv = console.log('resposta', resposta)
 
-algoCopiado + aprintv = print('resposta', resposta)
+algoCopiado + aPrintv = print('resposta', resposta)
 
-console.log()
+aJsAf ou aafjs= () => {}
+
+aCyEq = expect(valor).to.equal()
+
+aCyDEq= expect(valor).to.deep.equal()
+
+aCySh= should('', '')
+
+acyit= it('descricao_do_teste', () => {
+})
+
+aDjMMig= python manage.py makemigrations
+
+adjmig= python manage.py migrate
+
+aDjRServer= python manage.py runserver
+
+aCySheq= should('to.equal', )
+
+aCyShdeq = should('to.deep.equal', )
+
+aCyReq aCyRequest= cy.request({
+method: '',
+url: '',
+headers: {
+Authorization: token},})
