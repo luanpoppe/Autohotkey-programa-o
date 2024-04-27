@@ -110,3 +110,37 @@
 
     A_Clipboard := previousPrint
 }
+
+::aCyBefore:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "before(function() {})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    A_Clipboard := actualPrint
+}
+
+::aCyBeforeEach::
+::aCyBEach:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "beforeEach(function() {})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    A_Clipboard := actualPrint
+}
+
+::aCyAfter:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "after(function() {})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    A_Clipboard := actualPrint
+}
+
+::aCyAfterEach::
+::aCyAEach:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "afterEach(function() {})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    A_Clipboard := actualPrint
+}
