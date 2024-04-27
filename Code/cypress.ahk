@@ -71,7 +71,16 @@
 
 ::aCyIt:: {
     actualPrint := A_Clipboard
-    A_Clipboard := "it('descricao_do_teste', () => {})"
+    A_Clipboard := "it('descricao_do_teste', function() {})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    A_Clipboard := actualPrint
+}
+
+::aCyDescribe::
+::aCyDesc:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "describe('descricao_do_describe', function() {})"
     Send(ctrl("v"))
     Send("{Left}{Left}{Enter}")
     A_Clipboard := actualPrint

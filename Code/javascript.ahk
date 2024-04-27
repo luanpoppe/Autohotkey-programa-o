@@ -170,7 +170,19 @@
 ::aJsThen:: {
     actualPrint := A_Clipboard
     input := InputBox("Digite o nome do parâmetro", "Next: ", unset, "resposta")
-    A_Clipboard := "then((resposta) => {})"
+    A_Clipboard := "then((" . input.Value . ") => {})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+
+    A_Clipboard := actualPrint
+}
+
+::aJsThenFunction::
+::aJsThenF::
+::aCyThen:: {
+    actualPrint := A_Clipboard
+    input := InputBox("Digite o nome do parâmetro", "Next: ", unset, "resposta")
+    A_Clipboard := "then(function(" . input.Value . ") {})"
     Send(ctrl("v"))
     Send("{Left}{Left}{Enter}")
 
