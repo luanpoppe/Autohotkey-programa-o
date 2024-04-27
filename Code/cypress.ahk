@@ -71,7 +71,16 @@
 
 ::aCyIt:: {
     actualPrint := A_Clipboard
-    A_Clipboard := "it('descricao_do_teste', () => {})"
+    A_Clipboard := "it('descricao_do_teste', function() {})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    A_Clipboard := actualPrint
+}
+
+::aCyDescribe::
+::aCyDesc:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "describe('descricao_do_describe', function() {})"
     Send(ctrl("v"))
     Send("{Left}{Left}{Enter}")
     A_Clipboard := actualPrint
@@ -100,4 +109,38 @@
     Send(ctrl("v"))
 
     A_Clipboard := previousPrint
+}
+
+::aCyBefore:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "before(function() {})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    A_Clipboard := actualPrint
+}
+
+::aCyBeforeEach::
+::aCyBEach:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "beforeEach(function() {})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    A_Clipboard := actualPrint
+}
+
+::aCyAfter:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "after(function() {})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    A_Clipboard := actualPrint
+}
+
+::aCyAfterEach::
+::aCyAEach:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "afterEach(function() {})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    A_Clipboard := actualPrint
 }

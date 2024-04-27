@@ -170,7 +170,19 @@
 ::aJsThen:: {
     actualPrint := A_Clipboard
     input := InputBox("Digite o nome do parâmetro", "Next: ", unset, "resposta")
-    A_Clipboard := "then((resposta) => {})"
+    A_Clipboard := "then((" . input.Value . ") => {})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+
+    A_Clipboard := actualPrint
+}
+
+::aJsThenFunction::
+::aJsThenF::
+::aCyThen:: {
+    actualPrint := A_Clipboard
+    input := InputBox("Digite o nome do parâmetro", "Next: ", unset, "resposta")
+    A_Clipboard := "then(function(" . input.Value . ") {})"
     Send(ctrl("v"))
     Send("{Left}{Left}{Enter}")
 
@@ -246,4 +258,51 @@
     texto := "document.querySelectorAll(`"`")"
     colar_texto(texto)
     Send("{Left}{Left}")
+}
+
+; Criar arrow function JavaScript:
+::aJSArrow:: ; aArrowJS | aJSAF | aAFJS
+::aArrowJS::
+::aJSAF::
+::aAFJS:: {
+    SetKeyDelay(50)
+    previousClipboard := A_Clipboard
+    print := "() => {}"
+    A_Clipboard := print
+    Send(ctrl("v"))
+
+    A_Clipboard := previousClipboard
+}
+
+; Criar função anônima completa:
+::aJsFuncaoAnonima:: ; aArrowJS | aJSAF | aAFJS
+::aJsFAnonima::
+::aJsFAn::
+::aFaJs::
+::aJsFa:: {
+    SetKeyDelay(50)
+    previousClipboard := A_Clipboard
+    print := "function() {}"
+    A_Clipboard := print
+    Send(ctrl("v"))
+    Send("{Left}{Enter}")
+
+    A_Clipboard := previousClipboard
+}
+
+; Escrever o seletor do jQuery --> a$$ ou ajqry --> $("")
+::a$$::
+::ajqry::
+::ajqy::
+::ajqr:: {
+    Send("$(`"`")")
+    Send(left_arrow "" left_arrow)
+}
+
+; Escrever o ${} para strings no JavaScript - aJStr (Javascript string)
+::aJStr::
+::aJString::
+::aJsString:: {
+    Send("{Raw}" "${}") ; ${}
+    Send(left_arrow)
 }
