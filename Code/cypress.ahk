@@ -53,7 +53,7 @@
 
 ::aCyShEq:: {
     actualPrint := A_Clipboard
-    A_Clipboard := "should('to.equal', )"
+    A_Clipboard := "should('equal', )"
     Send(ctrl("v"))
     Send("{Left}{Left}")
     A_Clipboard := actualPrint
@@ -63,7 +63,7 @@
 ::aCyShDEqual::
 ::aCyShDEq:: {
     actualPrint := A_Clipboard
-    A_Clipboard := "should('to.deep.equal', )"
+    A_Clipboard := "should('deep.equal', )"
     Send(ctrl("v"))
     Send("{Left}{Left}")
     A_Clipboard := actualPrint
@@ -142,5 +142,32 @@
     A_Clipboard := "afterEach(function() {})"
     Send(ctrl("v"))
     Send("{Left}{Left}{Enter}")
+    A_Clipboard := actualPrint
+}
+
+::aCyLog:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "cy.log()"
+    Send(ctrl("v"))
+    Send("{Left}")
+
+    A_Clipboard := actualPrint
+}
+
+::aCyLogV:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "cy.log('" . actualPrint . "', " . actualPrint . ")"
+    Send(ctrl("v"))
+    Send("{Left}")
+
+    A_Clipboard := actualPrint
+}
+
+::aCyGet:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "cy.get('')"
+    Send(ctrl("v"))
+    Send("{Left}{Left}")
+
     A_Clipboard := actualPrint
 }

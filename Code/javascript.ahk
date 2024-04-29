@@ -93,6 +93,7 @@
 
 ::aJsMap:: {
     actualPrint := A_Clipboard
+    Sleep(100)
     input := InputBox("Digite o nome do item", "Map: ", unset, "item")
     pasteContent := "map((" . input.Value . ") => {})"
     A_Clipboard := pasteContent
@@ -106,6 +107,7 @@
 ::aJsFilter::  ; aJsFilt
 ::aJsFilt:: {
     actualPrint := A_Clipboard
+    Sleep(100)
     input := InputBox("Digite o nome do item", "Filter: ", unset, "item")
     pasteContent := "filter((" . input.Value . ") => {})"
     A_Clipboard := pasteContent
@@ -119,6 +121,7 @@
 ::aJsForEach::  ; aJsFEach
 ::aJsFEach:: {
     actualPrint := A_Clipboard
+    Sleep(100)
     input := InputBox("Digite o nome do item", "ForEach: ", unset, "item")
     pasteContent := "forEach((" . input.Value . ") => {})"
     A_Clipboard := pasteContent
@@ -129,6 +132,7 @@
 
 ::ajsNext:: {
     actualPrint := A_Clipboard
+    Sleep(100)
     input := InputBox("Digite o nome do parâmetro", "Next: ", unset, "response")
     pasteContent := "{}"
     A_Clipboard := pasteContent
@@ -150,6 +154,7 @@
 ::aJsSubs::
 ::aJsSub:: {
     actualPrint := A_Clipboard
+    Sleep(100)
     input := InputBox("Digite o nome do parâmetro", "Next: ", unset, "response")
     pasteContent := "subscribe({})"
     A_Clipboard := pasteContent
@@ -169,6 +174,7 @@
 
 ::aJsThen:: {
     actualPrint := A_Clipboard
+    Sleep(100)
     input := InputBox("Digite o nome do parâmetro", "Next: ", unset, "resposta")
     A_Clipboard := "then((" . input.Value . ") => {})"
     Send(ctrl("v"))
@@ -181,6 +187,7 @@
 ::aJsThenF::
 ::aCyThen:: {
     actualPrint := A_Clipboard
+    Sleep(100)
     input := InputBox("Digite o nome do parâmetro", "Next: ", unset, "resposta")
     A_Clipboard := "then(function(" . input.Value . ") {})"
     Send(ctrl("v"))
