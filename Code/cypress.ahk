@@ -171,3 +171,19 @@
 
     A_Clipboard := actualPrint
 }
+
+::aCyOpen:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "npx cypress open"
+    Send(ctrl("v"))
+
+    A_Clipboard := actualPrint
+}
+
+::aCyRun:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "npx cypress run"
+    Send(ctrl("v"))
+
+    A_Clipboard := actualPrint
+}
