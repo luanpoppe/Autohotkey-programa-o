@@ -187,3 +187,57 @@
 
     A_Clipboard := actualPrint
 }
+
+::aCyGiven:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "Given('ADICIONAR_DESCRICAO', function() {})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+
+    A_Clipboard := actualPrint
+}
+
+::aCyGivenV:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "Given('" . actualPrint . "', function() {})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+
+    A_Clipboard := actualPrint
+}
+
+::aCyWhen:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "When('ADICIONAR_DESCRICAO', function() {})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+
+    A_Clipboard := actualPrint
+}
+
+::aCyWhenV:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "When('" . actualPrint . "', function() {})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+
+    A_Clipboard := actualPrint
+}
+
+::aCyThen:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "When('ADICIONAR_DESCRICAO', function() {})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+
+    A_Clipboard := actualPrint
+}
+
+::aCyThenV:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "Then('" . actualPrint . "', function() {})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+
+    A_Clipboard := actualPrint
+}

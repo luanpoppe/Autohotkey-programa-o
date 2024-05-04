@@ -184,8 +184,7 @@
 }
 
 ::aJsThenFunction::
-::aJsThenF::
-::aCyThen:: {
+::aJsThenF:: {
     actualPrint := A_Clipboard
     Sleep(100)
     input := InputBox("Digite o nome do parâmetro", "Next: ", unset, "resposta")
