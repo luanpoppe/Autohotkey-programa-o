@@ -172,7 +172,8 @@
     A_Clipboard := actualPrint
 }
 
-::aCyOpen:: {
+::aCyOpen::
+::aCyOp:: {
     actualPrint := A_Clipboard
     A_Clipboard := "npx cypress open"
     Send(ctrl("v"))
@@ -226,7 +227,7 @@
 
 ::aCyThen:: {
     actualPrint := A_Clipboard
-    A_Clipboard := "When('ADICIONAR_DESCRICAO', function() {})"
+    A_Clipboard := "Then('ADICIONAR_DESCRICAO', function() {})"
     Send(ctrl("v"))
     Send("{Left}{Left}{Enter}")
 
@@ -238,6 +239,34 @@
     A_Clipboard := "Then('" . actualPrint . "', function() {})"
     Send(ctrl("v"))
     Send("{Left}{Left}{Enter}")
+
+    A_Clipboard := actualPrint
+}
+
+::aCyIntercept::
+::aCyICept:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "cy.intercept('GET', 'PASSAR_URL').as('NOME_INTERCEPT')"
+    Send(ctrl("v"))
+    Send("{Enter}")
+    A_Clipboard := "cy.wait('@NOME_INTERCEPT')"
+    Send(ctrl("v"))
+    ; Send("{Left}{Left}{Enter}")
+
+    A_Clipboard := actualPrint
+}
+
+::aCyInterceptFixture::
+::aCyInterceptF::
+::aCyICeptFixture::
+::aCyICeptF:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "cy.intercept('GET', 'PASSAR_URL', {fixture: 'PASSAR_FIXTURE'}).as('NOME_INTERCEPT')"
+    Send(ctrl("v"))
+    Send("{Enter}")
+    A_Clipboard := "cy.wait('@NOME_INTERCEPT')"
+    Send(ctrl("v"))
+    ; Send("{Left}{Left}{Enter}")
 
     A_Clipboard := actualPrint
 }
