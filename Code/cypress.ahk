@@ -111,6 +111,214 @@
     A_Clipboard := previousPrint
 }
 
+::aCyReqAuth::
+::aCyReqA:: {
+    previousPrint := A_Clipboard
+    A_Clipboard := "cy.request({})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "method: '',"
+    Send(ctrl("v"))
+    Send("{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "url: '',"
+    Send(ctrl("v"))
+    Send("{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "auth: {},"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "bearer: token"
+    Send(ctrl("v"))
+
+    A_Clipboard := previousPrint
+}
+
+::aCyReqBody::
+::aCyReqB:: {
+    previousPrint := A_Clipboard
+    A_Clipboard := "cy.request({})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "method: '',"
+    Send(ctrl("v"))
+    Send("{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "url: '',"
+    Send(ctrl("v"))
+    Send("{Enter}")
+
+    actualPrint := A_Clipboard
+    A_Clipboard := "body: {},"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    actualPrint := A_Clipboard
+
+    A_Clipboard := previousPrint
+}
+
+::aCyReqFail::
+::aCyReqF:: {
+    previousPrint := A_Clipboard
+    A_Clipboard := "cy.request({})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "method: '',"
+    Send(ctrl("v"))
+    Send("{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "url: '',"
+    Send(ctrl("v"))
+    Send("{Enter}")
+
+    actualPrint := A_Clipboard
+    A_Clipboard := "failOnStatusCode: false,"
+    Send(ctrl("v"))
+    actualPrint := A_Clipboard
+
+    A_Clipboard := previousPrint
+}
+
+::aCyReqAuthBody::
+::aCyReqBodyAuth::
+::aCyReqAB::
+::aCyReqBA:: {
+    previousPrint := A_Clipboard
+    A_Clipboard := "cy.request({})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "method: '',"
+    Send(ctrl("v"))
+    Send("{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "url: '',"
+    Send(ctrl("v"))
+    Send("{Enter}")
+    actualPrint := A_Clipboard
+
+    A_Clipboard := "body: {},"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}{Down}{Enter}")
+    actualPrint := A_Clipboard
+
+    A_Clipboard := "auth: {},"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "bearer: token"
+    Send(ctrl("v"))
+
+    A_Clipboard := previousPrint
+}
+
+::aCyReqAuthFail::
+::aCyReqFailAuth::
+::aCyReqAF::
+::aCyReqFA:: {
+    previousPrint := A_Clipboard
+    A_Clipboard := "cy.request({})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "method: '',"
+    Send(ctrl("v"))
+    Send("{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "url: '',"
+    Send(ctrl("v"))
+    Send("{Enter}")
+    actualPrint := A_Clipboard
+
+    A_Clipboard := "failOnStatusCode: false,"
+    Send(ctrl("v"))
+    Send("{Enter}")
+    actualPrint := A_Clipboard
+
+    A_Clipboard := "auth: {},"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "bearer: token"
+    Send(ctrl("v"))
+
+    A_Clipboard := previousPrint
+}
+
+::aCyReqFailBody::
+::aCyReqBodyFail::
+::aCyReqFB::
+::aCyReqBF:: {
+    previousPrint := A_Clipboard
+    A_Clipboard := "cy.request({})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "method: '',"
+    Send(ctrl("v"))
+    Send("{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "url: '',"
+    Send(ctrl("v"))
+    Send("{Enter}")
+    actualPrint := A_Clipboard
+
+    A_Clipboard := "body: {},"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}{Down}{Enter}")
+    actualPrint := A_Clipboard
+
+    A_Clipboard := "failOnStatusCode: false,"
+    Send(ctrl("v"))
+
+    A_Clipboard := previousPrint
+}
+
+::aCyReqAuthBodyFail::
+::aCyReqABF::
+::aCyReqAFB::
+::aCyReqBAF::
+::aCyReqBFA::
+::aCyReqFAB::
+::aCyReqFBA:: {
+    previousPrint := A_Clipboard
+    A_Clipboard := "cy.request({})"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "method: '',"
+    Send(ctrl("v"))
+    Send("{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "url: '',"
+    Send(ctrl("v"))
+    Send("{Enter}")
+    actualPrint := A_Clipboard
+
+    A_Clipboard := "body: {},"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}{Down}{Enter}")
+    actualPrint := A_Clipboard
+
+    A_Clipboard := "failOnStatusCode: false,"
+    Send(ctrl("v"))
+    A_Clipboard := previousPrint
+    Send("{Enter}")
+
+    A_Clipboard := "auth: {},"
+    Send(ctrl("v"))
+    Send("{Left}{Left}{Enter}")
+    actualPrint := A_Clipboard
+    A_Clipboard := "bearer: token"
+    Send(ctrl("v"))
+
+    A_Clipboard := previousPrint
+}
+
 ::aCyBefore:: {
     actualPrint := A_Clipboard
     A_Clipboard := "before(function() {})"
@@ -165,9 +373,9 @@
 
 ::aCyGet:: {
     actualPrint := A_Clipboard
-    A_Clipboard := "cy.get('')"
+    A_Clipboard := "cy.get()"
     Send(ctrl("v"))
-    Send("{Left}{Left}")
+    Send("{Left}")
 
     A_Clipboard := actualPrint
 }
@@ -267,6 +475,21 @@
     A_Clipboard := "cy.wait('@NOME_INTERCEPT')"
     Send(ctrl("v"))
     ; Send("{Left}{Left}{Enter}")
+
+    A_Clipboard := actualPrint
+}
+
+::aCyGetShould::
+::aCyGetShd::
+::aCyGetSh::
+::aCyGShould::
+::aCyGShd::
+::aCyGSh:: {
+    actualPrint := A_Clipboard
+    A_Clipboard := "cy.get().should('')"
+    Send(ctrl("v"))
+    Send("{Left}{Left}")
+    Send("{Ctrl down}{Space}{Ctrl up}")
 
     A_Clipboard := actualPrint
 }
