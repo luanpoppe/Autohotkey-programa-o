@@ -276,6 +276,7 @@
     print := "() => {}"
     A_Clipboard := print
     Send(ctrl("v"))
+    Send("{Left}{Enter}")
 
     A_Clipboard := previousClipboard
 }
@@ -311,4 +312,20 @@
 ::aJsString:: {
     Send("{Raw}" "${}") ; ${}
     Send(left_arrow)
+}
+
+; Escrever o `${}` com as aspas francesas
+::strFr::
+::aStrFr::
+::aAsp::
+::aAspFr::
+::aAsFr::
+::aAFr:: {
+    actualPrint := A_Clipboard
+    ; A_Clipboard := "`${}`"
+    A_Clipboard := "``${}``"
+    Send(ctrl("v"))
+    Send("{Left}{Left}")
+
+    A_Clipboard := actualPrint
 }
