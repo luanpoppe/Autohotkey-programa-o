@@ -34,3 +34,28 @@ method: '',
 url: '',
 headers: {
 Authorization: token},})
+
+NOVO
+cy.request({
+method: '',
+url: '',
+auth: {
+bearer: token},})
+
+aCyDesc= describe('descricao_do_describe', function() {
+})
+
+ajsthenf ou acythen= then(function(resposta) {
+})
+
+acybefore= before(function() {
+})
+
+acyafter= after(function() {
+})
+
+aCyBEach= beforeEach(function() {
+})
+
+aCyAEach= afterEach(function() {
+})
